@@ -1,0 +1,6 @@
+{
+  "extends": "next/core-web-app",
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn" // lub "off" aby całkowicie wyłączyć
+  }
+}

@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 247, 250;
+  --background-end-rgb: 255, 255, 255;
+}
+@keyframes gradient-xy {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .bg-gradient-animate {
+    background: linear-gradient(-45deg, #3b82f6, #0ed1df, #1dd826, #05571227);
+    background-size: 400% 400%;
+    animation: gradient-xy 15s ease infinite;
+  }
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Chat message animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Custom focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+/* Custom button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Template card styles */
+.template-card {
+  @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow;
+}
+
+/* Input styles */
+.input-primary {
+  @apply w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none;
+}
+
+/* Header styles */
+.header-nav {
+  @apply bg-white shadow-sm sticky top-0 z-50;
+}
+
+/* Container styles */
+.main-container {
+  @apply container mx-auto px-4 py-8;
+}
+
+/* Grid layouts */
+.templates-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Chat window styles */
+.chat-window {
+  @apply flex-1 bg-white rounded-lg shadow-lg p-4 flex flex-col;
+}
+
+.chat-messages {
+  @apply flex-1 overflow-y-auto mb-4 space-y-4;
+}
+
+.message-input {
+  @apply flex gap-2 items-center border-t pt-4;
+}
+
+/* Sidebar styles */
+.sidebar {
+  @apply w-64 bg-white rounded-lg shadow-lg p-4;
+}
+
+/* Icon button styles */
+.icon-button {
+  @apply p-2 rounded-full transition-colors duration-200;
+}
+
+.icon-button-danger {
+  @apply text-gray-600 hover:text-red-600 hover:bg-red-50;
+}
+
+.icon-button-primary {
+  @apply text-gray-600 hover:text-blue-600 hover:bg-blue-50;
+}
